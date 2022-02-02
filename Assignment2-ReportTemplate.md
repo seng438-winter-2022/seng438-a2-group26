@@ -11,12 +11,13 @@
 
 # 1 Introduction
 
-Text…
+This lab focuses on the fundamentals of automated unit testing. Using JUnit test framework, we are developing automated tests for the JFreeChart. Specific tests will be looking at `org.jfree.data` classes `DataUtilities` and `Range`.
 
 # 2 Detailed description of unit test strategy
 
 // including the input partitions you have designed
 ## DataUtilities
+
 ### `calculateColumnTotal(Values2D date, int column, int[] validRows)`
 > Returns the total of the values in one column of the supplied data table by taking only the row numbers in the array into account.
 
@@ -28,6 +29,7 @@ Likely, these tests will include:
 - testing with all valid parameters
 - testing with empty `validRows`
 ## Range
+
 ### `constrain(double value)`
 > Returns the value within the range that is closest to the specified value.
 
@@ -39,6 +41,8 @@ To test this funciton we will need to examin a variety of values that may or may
 - `value` within the range
 - `value` on range boundaries
 - `value` out of the range
+
+
 # 3 Test cases developed
 
 Text…
@@ -49,7 +53,9 @@ you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-Text…
+The group work for this project was evenly divided between all 4 team members. Of the required 10 methods to test, each team member took 1 which required mock testing and 1 regularly tested method. Then, in pairs, the final 2 methods were tested. This method allowed for flexibility of work around an individual's schedule to fit in additional course work.
+
+Similarly, the report was divided so that each section was completed by the student with the most relevant knowledge, such as each testing plan being described by the author. 
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
@@ -57,4 +63,4 @@ Text…
 
 # 6 Comments/feedback on the lab itself
 
-Text…
+Lab documentation and instructions were clearly laid out. It could have been helpful to have reminders in the lab document about how to work complicated tests such as the mock tests, similarly to how there were instuctions for the project and compilation.
