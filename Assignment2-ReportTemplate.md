@@ -42,7 +42,17 @@ To test this funciton we will need to examin a variety of values that may or may
 - `value` on range boundaries
 - `value` out of the range
 
+### `combine(Range range1, Range range2)`
 
+To test this function, we will be dividing our test cases into the following paritions:
+- Ranges do not have any overlap
+- Ranges have boundary overlap
+- Ranges have partial overlap
+- Ranges have full overlap
+- `range1` is null
+- `range2` is null
+- both ranges are null
+These partitions allow us to verify the boundaries of each range while omitting equivalent cases where the ranges change place.
 # 3 Test cases developed
 
 Text…
