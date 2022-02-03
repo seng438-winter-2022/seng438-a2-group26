@@ -2,12 +2,12 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group 26         |          |         |
-| ---------------- | -------- | ------- |
-| Liana Goodman    | 30089196 | LianaBG |
-| Amir Abdrakmanov |          |         |
-| Jared Lundyy     |          |         |
-| Jordan Lundy     |          |         |
+| Group 26         |          |                     |
+| ---------------- | -------- | --------------|
+| Liana Goodman    | 30089196 | LianaBG       |
+| Amir Abdrakmanov | 30085827 | aabdrakmanov  |
+| Jared Lundyy     |          |               |
+| Jordan Lundy     |          |               |
 
 # 1 Introduction
 
@@ -55,6 +55,23 @@ To test this function, we will be dividing our test cases into the following par
 - both ranges are null
 
 These partitions allow us to verify the boundaries of each range while omitting equivalent cases where the ranges change place.
+
+### `intersects(double b0, double b1)`
+
+To test this function, the following partions were devised based on mathematics and the understanding that the variables are dependent on each other:
+where upper is the calling object's upper bound, and lower is its lower bound, b0 is the argument lower bound and b1 is the argument upper bound
+-upper>b1>=b0>lower
+-b1>upper>b0>lower
+-upper>b1>lower>b0
+-b1>upper>=lower>b0
+-b1=upper>lower=b0
+-b1=upper>b0>lower
+-upper>b1>lower=b0
+-b1=upper=lower=b0
+-b0>b1
+-b1 is Double.NaN, b0 is valid
+-b0 is Double.NaN, b1 is valid
+-both b1 and b0 are Double.NaN
 
 # 3 Test cases developed
 
