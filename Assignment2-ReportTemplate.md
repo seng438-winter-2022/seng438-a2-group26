@@ -58,7 +58,7 @@ These partitions allow us to verify the boundaries of each range while omitting 
 
 ### `intersects(double b0, double b1)`
 
-To test this function, the following partions were devised based on mathematics and the understanding that the variables are dependent on each other:
+To test this function, the following equivilance classes were devised based on mathematics and the understanding that the variables are dependent on each other:
 where upper is the calling object's upper bound, and lower is its lower bound, b0 is the argument lower bound and b1 is the argument upper bound
 - upper>b1>=b0>lower
 - b1>upper>b0>lower
