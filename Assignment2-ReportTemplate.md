@@ -52,7 +52,9 @@ To test this function, we will be dividing our test cases into the following par
 - `range1` is null
 - `range2` is null
 - both ranges are null
+
 These partitions allow us to verify the boundaries of each range while omitting equivalent cases where the ranges change place.
+
 # 3 Test cases developed
 
 Text…
