@@ -36,8 +36,7 @@ Likely, these tests will include:
 To test this funciton we will need to examin a variety of values that may or may not be valid within range and as doubles. Test cases will also need to verify the "closest value" functionality. In this case, test cases can likely be combined without harming the test, resulting in reduced total number of test cases. These cases may include (and should explore):
 - positive `value`
 - negative `value`
-- very large `value`
-- overflowed `value`
+- very large or small `value`
 - `value` within the range
 - `value` on range boundaries
 - `value` out of the range
