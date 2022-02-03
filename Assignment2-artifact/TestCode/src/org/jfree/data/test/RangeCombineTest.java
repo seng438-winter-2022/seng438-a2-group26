@@ -25,8 +25,8 @@ public class RangeCombineTest {
 	}
 	@Test
 	public void testRangesBoundaryOverlap() {
-		Range R1=new Range(0,1);
-		Range R2=new Range(1,2);
+		Range R1=new Range(0,1.1);
+		Range R2=new Range(1.1,2);
 		Range expected= new Range(0,2);
 		Range actual= Range.combine(R2, R1);
 		assertTrue(expected.equals(actual));
