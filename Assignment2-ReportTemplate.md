@@ -73,6 +73,12 @@ where upper is the calling object's upper bound, and lower is its lower bound, b
 - b0 is Double.NaN, b1 is valid
 - both b1 and b0 are Double.NaN
 
+
+### `getLength()`
+> Returns the length of the range.
+
+
+
 # 3 Test cases developed
 
 Text…
