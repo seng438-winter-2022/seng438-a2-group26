@@ -90,6 +90,7 @@ As such, the following equivalency classes classes and boundary cases were creat
 - {a rounge boundary contains an overflow ie. >MAX_SIZE(double)}
 - {both boundaries are negative}
 - {one boundary is negative}
+- {both boundaries are zero}
 
 These derived test cases should extensively test both the valid equivalency classes as well as invalid equivalency classes to sufficiently test the getLength() method's
 functionality in accurately determining the length from the given Range boundaries.
