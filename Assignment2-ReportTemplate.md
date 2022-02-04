@@ -98,7 +98,9 @@ functionality in accurately determining the length from the given Range boundari
 ### `getLowerBound()`
 > Returns lower bound of range.
 
-In order to properly test getLowerBound(), which tests the lower boundary of the range, we must first make a range object, and then test equivalent classes, as well as boundary classes in order to properly determine the state of getLowerBound(). The equivalence classes and boundary classes of the lower boundary value were as followed:
+In order to properly test getLowerBound(), which tests the lower boundary of the range, we must first make a range object,
+and then test equivalent classes, as well as boundary classes in order to properly determine the state of getLowerBound(). 
+The equivalence classes and boundary classes of the lower boundary value were as followed:
 - a negative value
 - a positive value
 - zero
