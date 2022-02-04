@@ -6,7 +6,7 @@
 | ---------------- | -------- | --------------|
 | Liana Goodman    | 30089196 | LianaBG       |
 | Amir Abdrakmanov | 30085827 | aabdrakmanov  |
-| Jared Lundyy     |          |               |
+| Jared Lundy      | 30086687 | jared840      |
 | Jordan Lundy     |          |               |
 
 # 1 Introduction
