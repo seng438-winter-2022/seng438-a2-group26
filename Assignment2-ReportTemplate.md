@@ -77,10 +77,10 @@ where upper is the calling object's upper bound, and lower is its lower bound, b
 ### `getLength()`
 > Returns the length of the range.
 
-In order to sufficiently test the getLength() method of the class Range, the upper and lower boundaries of a created Range obkect must be scrutinized. Since the length of the
+In order to sufficiently test the getLength() method of the class Range, the upper and lower boundaries of a created Range object must be scrutinized. Since the length of the
 range is merely the difference between these two values, we must create equivalency classes and boundary cases based on these parameters. The boundary cases are to be dictated
 by the boundary of the Range values themselves, i.e. that lower<=upper & upper>=lower.
-As such, the following equivalency classes classes and boundary cases were adopted:
+As such, the following equivalency classes classes and boundary cases were created:
 - {lower range boundary < upper range boundary}
 - {lower range boundary == upper range boundary}
 - {lower range boundary > upper range boundary}
