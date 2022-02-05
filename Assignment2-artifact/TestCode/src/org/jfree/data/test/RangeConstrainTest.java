@@ -9,48 +9,48 @@ public class RangeConstrainTest {
 	private Range range;
 
     @BeforeClass
-    void setup () {
+    public static void setup () {
         range = new Range (-2, 12);
     }
 
     @AfterClass
-    void teardown () {
+    public static void teardown () {
         range = null;
     }
 
     @Test
     public void testRangePositive () {
         double res = range.constrain(5);
-        assertEquals (5.0, res);
+        assertEquals (5.0, res, 0);
     }
 
     @Test
     public void testRangeNegative () {
         double res = range.constrain(-1);
-        assertEquals (-1.0, res);
+        assertEquals (-1.0, res, 0);
     }
     
     @Test
     public void testRangeOutOfRangeAbove () {
         double res = range.constrain(154);
-        assertEquals (12.0, res);
+        assertEquals (12.0, res, 0);
     }
     
     @Test
     public void testRangeOutOfRangeBelow () {
         double res = range.constrain(-62);
-        assertEquals (-2.0, res);
+        assertEquals (-2.0, res, 0);
     }
     
     @Test
     public void testRangeBoundaryUpper () {
         double res = range.constrain(12);
-        assertEquals (12.0, res);
+        assertEquals (12.0, res, 0);
     }
     
     @Test
     public void testRangeBoundaryLower () {
         double res = range.constrain(-2);
-        assertEquals (-2.0, res);
+        assertEquals (-2.0, res, 0);
     }
 }
