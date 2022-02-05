@@ -18,31 +18,37 @@ public class RangeConstrainTest {
         range = null;
     }
 
+    @Test
     public void testRangePositive () {
         double res = range.constrain(5);
         assertEquals (5.0, res);
     }
 
+    @Test
     public void testRangeNegative () {
         double res = range.constrain(-1);
         assertEquals (-1.0, res);
     }
     
+    @Test
     public void testRangeOutOfRangeAbove () {
         double res = range.constrain(154);
         assertEquals (12.0, res);
     }
     
+    @Test
     public void testRangeOutOfRangeBelow () {
         double res = range.constrain(-62);
         assertEquals (-2.0, res);
     }
     
+    @Test
     public void testRangeBoundaryUpper () {
         double res = range.constrain(12);
         assertEquals (12.0, res);
     }
     
+    @Test
     public void testRangeBoundaryLower () {
         double res = range.constrain(-2);
         assertEquals (-2.0, res);
