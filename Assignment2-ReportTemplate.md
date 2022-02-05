@@ -155,6 +155,24 @@ For `testRangesNoOverlap` the documentation was unclear whether the method shoul
 | **testRangesNullRange2**        | Combining ranges with `range2` being `null`                                             |
 | **testRangesNullBoth**          | Combining 2 `null` ranges                                                               |
 
+### RangeGetLengthTest
+
+The following test cases were developed to throroughly test the getLength() method of Range. For most tests, an upper and a 
+lower boundary were assigned an arbitrary value that fit the prescribed test conditions, and then was checked against an assumed
+infallible subtracted number for its accuracy.
+
+| _Method_                        | _Function_                                                                              |
+| ------------------------------- | --------------------------------------------------------------------------------------- |
+| **testBothBoundariesZero**      | Length when both upper and lower bounds zero for Range                                  |
+| **testLowerBoundaryLessThanUpper**| Length when lower boundary < upper boundary                                             |
+| **testLowerBoundaryEqualsUpperBoundary** | Length when lower bound == upper bound                                           |
+| **testLowerBoundaryGreaterThanUpper** | Length when lower bound > upper bound                                             |
+| **testNull**                    | Length for a NULL Range                                                                 |
+| **testBothNegative**            | Length when both boundaries are negative values                                          |
+| **testOneNegativeBound**        | Length when one boundary is  negative value                                               |
+| **testLargePositive**           | Length when a boundary == Double.MAX_VAUE                                                 |
+
+
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
