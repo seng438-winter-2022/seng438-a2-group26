@@ -30,6 +30,8 @@ Likely, these tests will include:
 - testing an in bound but end value `column`
 - testing with `validRows` entries exceeding data rows
 - testing with all valid parameters
+- testing with null data (to test not permited functionality)
+- testing with negative values
 - testing with empty `validRows`
 
 ## Range
