@@ -166,6 +166,9 @@ Add Description here
 | **testLowerBoundaryEqualsUpperBoundary** | Length when lower bound == upper bound                                           |
 | **testLowerBoundaryGreaterThanUpper** | Length when lower bound > upper bound                                             |
 | **testNull**                    | Length for a NULL Range                                                                 |
+| **testBothNegative**            | Length when both boundaries are negative values                                          |
+| **testOneNegativeBound**        | Length when one boundary is  negative value                                               |
+| **testLargePositive**           | Length when a boundary == Double.MAX_VAUE                                                 |
 
 
 // write down the name of the test methods and classes. Organize the based on
