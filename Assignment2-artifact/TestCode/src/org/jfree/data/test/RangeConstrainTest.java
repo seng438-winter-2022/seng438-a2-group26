@@ -6,7 +6,7 @@ import org.junit.*;
 
 
 public class RangeConstrainTest {
-	private Range range;
+	private static Range range;
 
     @BeforeClass
     public static void setup () {
