@@ -155,6 +155,19 @@ For `testRangesNoOverlap` the documentation was unclear whether the method shoul
 | **testRangesNullRange2**        | Combining ranges with `range2` being `null`                                             |
 | **testRangesNullBoth**          | Combining 2 `null` ranges                                                               |
 
+### RangeGetLengthTest
+
+Add Description here
+
+| _Method_                        | _Function_                                                                              |
+| ------------------------------- | --------------------------------------------------------------------------------------- |
+| **testBothBoundariesZero**      | Length when both upper and lower bounds zero for Range                                  |
+| **testLowerBoundaryLessThanUpper**| Length when lower boundary < upper boundary                                             |
+| **testLowerBoundaryEqualsUpperBoundary** | Length when lower bound == upper bound                                           |
+| **testLowerBoundaryGreaterThanUpper** | Length when lower bound > upper bound                                             |
+| **testNull**                    | Length for a NULL Range                                                                 |
+
+
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
