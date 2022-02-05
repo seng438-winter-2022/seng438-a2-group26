@@ -84,6 +84,43 @@ public class RangeGetLengthTest {
 		
 	}
 	
+
+	/**
+	 * Test when one boundary is negative. Should return upper-lower
+	 */
+	@Test
+	public void testOneNegativeBound() {
+		lowerBound = -5.0;
+		upperBound = 3.0;
+		expected = upperBound-lowerBound;
+		rangeUnderTest = new Range(lowerBound, upperBound);
+		assertEquals(expected, rangeUnderTest.getLength(), DELTA);
+	}
+	
+	/**
+	 * Test when both numbers are negative. Should return upper-lower
+	 */
+	@Test
+	public void testBothNegative() {
+		lowerBound = -6.75;
+		upperBound = -3.25;
+		expected = upperBound - lowerBound;
+		rangeUnderTest = new Range(lowerBound, upperBound);
+		assertEquals(expected, rangeUnderTest.getLength(), DELTA);
+	}
+	
+	/**
+	 * Testing the getLength() can handle the max double size as one of the boundaries.
+	 */
+	@Test
+	public void testLargePositive() {
+		lowerBound = 0.0;
+		upperBound = Double.MAX_VALUE;
+		expected = upperBound - lowerBound;
+		rangeUnderTest = new Range(lowerBound, upperBound);
+		assertEquals(expected, rangeUnderTest.getLength(), DELTA);
+	}
+
 }
 
 
