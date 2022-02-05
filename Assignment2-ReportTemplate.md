@@ -157,7 +157,9 @@ For `testRangesNoOverlap` the documentation was unclear whether the method shoul
 
 ### RangeGetLengthTest
 
-Add Description here
+The following test cases were developed to throroughly test the getLength() method of Range. For most tests, an upper and a 
+lower boundary were assigned an arbitrary value that fit the prescribed test conditions, and then was checked against an assumed
+infallible subtracted number for its accuracy.
 
 | _Method_                        | _Function_                                                                              |
 | ------------------------------- | --------------------------------------------------------------------------------------- |
