@@ -21,5 +21,9 @@ public class getLowerBoundTest{
 	public void testPositiveBoth() {
 		assertEquals(3,tester.getLowerBound(),0);
 	}
-	
+	@Test
+	public void testNegativeNumber() {
+		tester=new Range(-4,-1);
+		assertEquals(-4,tester.getLowerBound(),0);
+	}	
 }
