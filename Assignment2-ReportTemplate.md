@@ -143,7 +143,7 @@ If all equivalence and boundaries are tested and passed, then getLowerBound() ha
 
 # 3 Test cases developed
 ## DataUtilities
-###TestDataUtilitiesCumulativePercentages
+### TestDataUtilitiesCumulativePercentages
 
 This test class focused on the test cases for `getCumulativePercentages(KeyedValues)` defined above
 
@@ -245,7 +245,7 @@ Similarly, the report was divided so that each section was completed by the stud
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-One difficulty the team came across was trying to all share a project in eclipse and have it function properly. We worked together to figure out how to share our individual processes until we all got eclipse to work.
+One difficulty the team came across was trying to all share a project in eclipse and have it function properly. We worked together to figure out how to share our individual processes until we all got eclipse to work. Another issue encountered during the process was that the included jar files specifically hamcrest-core-1-3.jar did not have the required classes to allow for Jmock to be used, to remedy this, hamcrest-all-1-3.jar had to be found on the internet and added to the classpath.  
 
 # 6 Comments/feedback on the lab itself
 
