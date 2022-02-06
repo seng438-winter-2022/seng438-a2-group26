@@ -26,4 +26,9 @@ public class getLowerBoundTest{
 		tester=new Range(-4,-1);
 		assertEquals(-4,tester.getLowerBound(),0);
 	}	
+	@Test
+	public void testZero() {
+		tester = new Range(0,0);
+		assertEquals(0,tester.getLowerBound(),0);
+	}
 }
