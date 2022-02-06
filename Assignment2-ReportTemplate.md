@@ -34,6 +34,20 @@ Likely, these tests will include:
 - testing with negative values
 - testing with empty `validRows`
 
+
+### `getCumulativePercentages(KeyedValues data)`
+
+> Returns a KeyedValues object with corresponding indexes to data but with cumulative percentages
+
+To test cases for this method were devised based on manipulating KeyedValues using mocery into the following types:
+
+- Correct sequential List
+- Correct Non-sequential List
+- Correct sequential List with negative values
+- List with unexpected behaviour
+- Null argument
+
+
 ## Range
 
 ### `constrain(double value)`
@@ -67,7 +81,7 @@ These partitions allow us to verify the boundaries of each range while omitting 
 
 ### `intersects(double b0, double b1)`
 
-To test this function, the following equivilance classes were devised based on mathematics and the understanding that the variables are dependent on each other:
+To test this function, the following test cases were devised based on mathematics and the understanding that the variables are dependent on each other:
 where upper is the calling object's upper bound, and lower is its lower bound, b0 is the argument lower bound and b1 is the argument upper bound
 
 - upper>b1>=b0>lower
@@ -78,10 +92,15 @@ where upper is the calling object's upper bound, and lower is its lower bound, b
 - b1=upper>b0>lower
 - upper>b1>lower=b0
 - b1=upper=lower=b0
+- b1>=b0>upper>lower
+- upper>lower>b1>=b0
 - b0>b1
 - b1 is Double.NaN, b0 is valid
 - b0 is Double.NaN, b1 is valid
 - both b1 and b0 are Double.NaN
+- both b0 and b1 are +Infinity
+- both b0 and b1 are -Infinity 
+- b1 is +Infinity, b0 is -Inifinity
 
 ### `getLength()`
 
@@ -124,6 +143,18 @@ If all equivalence and boundaries are tested and passed, then getLowerBound() ha
 
 # 3 Test cases developed
 ## DataUtilities
+###TestDataUtilitiesCumulativePercentages
+
+This test class focused on the test cases for `getCumulativePercentages(KeyedValues)` defined above
+
+| _Method_                     			| _Function_                           				|
+| --------------------------------------------- | ------------------------------------------------------------- |
+| **testSequentialList**       			| data is a correct sequential list    				|
+| **testSequentialListWithNegativeValues** 	| data is a correct sequential list with negative values       	|
+| **testNonSequentialList** 			| data is a correct non sequential list        			|
+| **testNullArgPassed** 			| data is null        						|
+| **testDataThrowsUnexpectedException** 	| data is a list with unexpected behaviour 			|
+
 
 ## Range
 ### RangeConstrainTest
@@ -156,6 +187,33 @@ For `testRangesNoOverlap` the documentation was unclear whether the method shoul
 | **testRangesNullRange1**        | Combining ranges with `range1` being `null`                                             |
 | **testRangesNullRange2**        | Combining ranges with `range2` being `null`                                             |
 | **testRangesNullBoth**          | Combining 2 `null` ranges                                                               |
+
+
+### RangeTestIntersectsDouble
+
+This class focused on test cases for the `intersects(double, double)` method as described above
+
+| _Method_                        		| _Function_         			|
+| ----------------------------------------------| --------------------------------------|
+| **testB1GreaterThanEqualsB0Within Range**	| upper>b1>=b0>lower 			|
+| **testB1GreaterThanUpper**  			| b1>upper>b0>lower  			|
+| **testB0LessThanLower**	   		| upper>b1>lower>b0  			|	
+| **testArgRangeLargerThanCurrentRange**	| b1>upper>=lower>b0 			|
+| **testB1EqualsUpperAndB0EqualsLower**		| b1=upper>lower=b0  			|
+| **testB1EqualsUpperB0GreaterThanLower**	| b1=upper>b0>lower  			|
+| **testUpperGreaterThanB1AndB0EqualsLower**	| upper>b1>lower=b0  			|
+| **testArgRangeDoesNotIntersectFromRight**	| b1>=b0>upper>lower 			|
+| **testArgRangeDoesNotIntersectFromLeft**	| upper>lower>b1>=b0 			|
+| **testAllEqualEachOther**			| b1=upper=lower=b0  			|
+| **testB0GreaterThanB1**			| b0>b1		     			|
+| **testB1NaN**					| b1 is Double.NaN, b0 valid		|
+| **testB0NaN**					| b0 is Double.NaN, b1 valid		|
+| **testBothNaN**				| b1 and b0 are Double.NaN		|	
+| **testBothNegativeInf**			| b1 and b0 are -Infinity		|
+| **testBothPositiveInf**			| b1 and b0 are +Infinity		|
+| **testMaxArgRange**				| b1 is +Infinity, b0 is -Infinity	|
+
+
 
 ### RangeGetLengthTest
 
