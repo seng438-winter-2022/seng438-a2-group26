@@ -31,4 +31,5 @@ public class getLowerBoundTest{
 		tester = new Range(0,0);
 		assertEquals(0,tester.getLowerBound(),0);
 	}
+
 }
