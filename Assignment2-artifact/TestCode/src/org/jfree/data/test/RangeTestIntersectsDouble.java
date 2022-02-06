@@ -105,7 +105,7 @@ public class RangeTestIntersectsDouble {
 		assertFalse(testee.intersects(Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY));
 	}
 	@Test
-	//b1 is +Infinity, b0 is -Inifinity
+	//b1 is +Infinity, b0 is -Infinity
 	public void testMaxArgRange() {
 		assertTrue(testee.intersects(Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY));
 	}
