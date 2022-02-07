@@ -273,6 +273,19 @@ infallible subtracted number for its accuracy.
 | **testOneNegativeBound**                 | Length when one boundary is negative value             |
 | **testLargePositive**                    | Length when a boundary == Double.MAX_VAUE              |
 
+
+### getLowerBoundTest
+
+The following test cases were used to determine any faults or bugs in getLowerBound(). An arbitrary value was used to test 
+the tested cases below, and fit the requirments of the test cases.
+
+| _Method_ | _Function_ |
+| --- | --- |
+| **testPositiveBoth** | lower boundary is positive value |
+| **testNegativeNumber** | lower boundary is negative value |
+| **testZero** | lower boundary is zero |
+
+
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
