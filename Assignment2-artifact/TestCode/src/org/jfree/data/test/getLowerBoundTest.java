@@ -31,4 +31,10 @@ public class getLowerBoundTest{
 		tester = new Range(0,0);
 		assertEquals(0,tester.getLowerBound(),0);
 	}
+	@Test 
+	public void testBigValue() 
+	{
+		tester=new Range(Double.MAX_VALUE-1,Double.MAX_VALUE);
+		assertEquals(Double.MAX_VALUE-1,tester.getLowerBound(),0);
+	}
 }
