@@ -1,13 +1,16 @@
 package org.jfree.data.test;
 
 import static org.junit.Assert.*; 
-import org.jfree.data.DataUtilities; 
+import org.jfree.data.DataUtilities;
+import org.jfree.data.Values2D;
+import org.jmock.Expectations;
+import org.jmock.Mockery;
 import org.junit.*;
 
 public class DataUtilitiesCalculateColumnTotalArrayTest {
     
     @Test // done
-    void testCCTAValid () {
+    public void testCCTAValid () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
         mockingContext.checking (new Expectations () {
@@ -38,7 +41,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
     }
     
     @Test // not sure what the results of this test should be
-    void testCCTAOutOfBoundsColumn () {
+    public void testCCTAOutOfBoundsColumn () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
         mockingContext.checking (new Expectations () {
@@ -73,7 +76,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
     }
     
     @Test // done
-    void testCCTABoundaryColumn () {
+    public void testCCTABoundaryColumn () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
         mockingContext.checking (new Expectations () {
@@ -104,13 +107,13 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
     }
     
     @Test // not sure what this should output
-    void testCCTAExtraValidRows () {
+    public void testCCTAExtraValidRows () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
         mockingContext.checking (new Expectations () {
             {
-                one(values).getColumnCount ();
-                will(returnValue(3));
+                one(values).getRowCount ();
+                will(returnValue(2));
                 // first row
                 one(values).getValue(0,0);
                 will(returnValue(13.2));
@@ -135,7 +138,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
     }
     
     @Test // not sure what this should result in
-    void testCCTANullData () {
+    public void testCCTANullData () {
         int [] validRows = {0,1};
         
         try {
@@ -149,7 +152,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
     }
     
     @Test // done
-    void testCCTAENegativeValidValues () {
+    public void testCCTAENegativeValidValues () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
         mockingContext.checking (new Expectations () {
@@ -180,7 +183,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
     }
     
     @Test // might return 0, might return an exception
-    void testCCTAEmptyValidRows () {
+    public void testCCTAEmptyValidRows () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
         mockingContext.checking (new Expectations () {
