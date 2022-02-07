@@ -62,17 +62,21 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
                 will(returnValue(17));
                 one(values).getValue(1,2);
                 will(returnValue(2.1));
+                
+                one(values).getValue(0, 7);
+                will(throwException(new IndexOutOfBoundsException ("7")));
             }
         });
 
         int [] validRows = {0,1};
+        
+        Boolean thrown =false;
         try {
-            double result = DataUtilities.calculateColumnTotal (values, 7, validRows);
-            assertEquals (result, 0, 0);
-        } catch (Exception e) {
-            System.out.println("Exception thrown.");
-            assertEquals(0,0,0);
+        	double result = DataUtilities.calculateColumnTotal (values, 7, validRows);
+        } catch (IndexOutOfBoundsException e) {
+        	thrown=true;
         }
+        assertTrue(thrown);
     }
     
     @Test // done
@@ -145,8 +149,8 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
             double result = DataUtilities.calculateColumnTotal (null, 1, validRows);
             assertEquals (result, 0, 0);
         } catch (Exception e) {
-            System.out.println("Exception thrown.");
-            assertEquals(0,0,0);
+            System.out.println("Exception thrown. 1");
+            assertEquals(0,0,0); 
         }
 
     }
@@ -212,7 +216,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
             double result = DataUtilities.calculateColumnTotal (values, 1, validRows);
             assertEquals (result, 0, 0);
         } catch (Exception e) {
-            System.out.println("Exception thrown");
+            System.out.println("Exception thrown 2");
             assertEquals (0, 0, 0); // send proper finish
         }
     }
