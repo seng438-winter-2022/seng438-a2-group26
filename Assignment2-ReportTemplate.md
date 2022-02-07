@@ -284,6 +284,7 @@ the tested cases below, and fit the requirments of the test cases.
 | **testPositiveBoth** | lower boundary is positive value |
 | **testNegativeNumber** | lower boundary is negative value |
 | **testZero** | lower boundary is zero |
+| **testBigValue** | lower boundary is max value -1 |
 
 
 // write down the name of the test methods and classes. Organize the based on
