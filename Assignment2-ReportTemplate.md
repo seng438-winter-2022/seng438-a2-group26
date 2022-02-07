@@ -61,6 +61,7 @@ The equivalence classes and boundaries to be partitioned and tested are:
 - Negative row calculation
 - Valid row with negative numbers
 - Testing NULL functionality
+
 ## Range
 
 ### `constrain(double value)`
@@ -182,6 +183,16 @@ This test class focused on the test cases for `getCumulativePercentages(KeyedVal
 | **testNonSequentialList**                | data is a correct non sequential list                  |
 | **testNullArgPassed**                    | data is null                                           |
 | **testDataThrowsUnexpectedException**    | data is a list with unexpected behaviour               |
+
+### DataUtilitiesCalcRowTotalTest
+
+Test class designed to test the calculateRowTotal() method of DataUtilities, while using JMock to mock the Values2D parameter.
+
+| _Method_                                  | _Function_                                            |
+| ----------------------------------------- | ----------------------------------------------------- |
+| **calculateRowTotalTwoValids**            | Valid row qith valid parameters                       |
+| **calculateRowTotalOutOfBounds**          | Row number out of bounds (>boundary)                  |
+| **calculateRowTotalNegativeRows**         | Negative row number                                   |
 
 ## Range
 
