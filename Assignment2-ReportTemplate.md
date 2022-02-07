@@ -151,8 +151,8 @@ The equivalence classes and boundary classes of the lower boundary value were as
 - a negative value
 - a positive value
 - zero
-- negative overflow
-- positive overflow
+- Double.MAX_VALUE-1
+- Double.MIN_VALUE
 
 If all equivalence and boundaries are tested and passed, then getLowerBound() has been extensively tested.
 
