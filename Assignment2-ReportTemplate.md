@@ -191,9 +191,13 @@ Test class designed to test the calculateRowTotal() method of DataUtilities, whi
 
 | _Method_                                  | _Function_                                            |
 | ----------------------------------------- | ----------------------------------------------------- |
-| **calculateRowTotalTwoValids**            | Valid row qith valid parameters                       |
+| **calculateRowTotalTwoValids**            | Valid row with valid parameters                       |
 | **calculateRowTotalOutOfBounds**          | Row number out of bounds (>boundary)                  |
 | **calculateRowTotalNegativeRows**         | Negative row number                                   |
+| **calculateRowTotalOnBoundary**           | Valid row equal to a boundary                         |
+| **calcRowTotalWithNegatives**             | Valid row with negative entries                        |
+| **calcRowNoValues**                       | Row with no values                                     |
+| **calcRowNullTest**                       | Null functionality                                     |
 
 ## Range
 
