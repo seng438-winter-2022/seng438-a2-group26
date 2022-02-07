@@ -9,7 +9,7 @@ import org.junit.*;
 
 public class DataUtilitiesCalculateColumnTotalArrayTest {
     
-    @Test // done
+    @Test
     public void testCCTAValid () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
@@ -40,7 +40,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
         assertEquals (result, 18.7, 0);
     }
     
-    @Test // not sure what the results of this test should be
+    @Test 
     public void testCCTAOutOfBoundsColumn () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
@@ -79,7 +79,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
         assertTrue(thrown);
     }
     
-    @Test // done
+    @Test 
     public void testCCTABoundaryColumn () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
@@ -110,7 +110,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
         assertEquals (result, 17.2, 0);
     }
     
-    @Test // not sure what this should output
+    @Test 
     public void testCCTAExtraValidRows () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
@@ -141,7 +141,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
         assertEquals (result, 1.7, 0);
     }
     
-    @Test // not sure what this should result in
+    @Test
     public void testCCTANullData () {
         int [] validRows = {0,1};
         
@@ -154,7 +154,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
         assertTrue(thrown);
     }
     
-    @Test // done
+    @Test 
     public void testCCTAENegativeValidValues () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);
@@ -185,7 +185,7 @@ public class DataUtilitiesCalculateColumnTotalArrayTest {
         assertEquals (result, 15.3, 0);
     }
     
-    @Test // might return 0, might return an exception
+    @Test
     public void testCCTAEmptyValidRows () {
         Mockery mockingContext = new Mockery ();
         final Values2D values = mockingContext.mock(Values2D.class);

@@ -34,7 +34,6 @@ Likely, these tests will include:
 - testing with negative values
 - testing with empty `validRows`
 
-
 ### `getCumulativePercentages(KeyedValues data)`
 
 > Returns a KeyedValues object with corresponding indexes to data but with cumulative percentages
@@ -46,7 +45,6 @@ To test cases for this method were devised based on manipulating KeyedValues usi
 - Correct sequential List with negative values
 - List with unexpected behaviour
 - Null argument
-
 
 ## Range
 
@@ -99,7 +97,7 @@ where upper is the calling object's upper bound, and lower is its lower bound, b
 - b0 is Double.NaN, b1 is valid
 - both b1 and b0 are Double.NaN
 - both b0 and b1 are +Infinity
-- both b0 and b1 are -Infinity 
+- both b0 and b1 are -Infinity
 - b1 is +Infinity, b0 is -Inifinity
 
 ### `getLength()`
@@ -142,21 +140,36 @@ The equivalence classes and boundary classes of the lower boundary value were as
 If all equivalence and boundaries are tested and passed, then getLowerBound() has been extensively tested.
 
 # 3 Test cases developed
+
 ## DataUtilities
+
+### DataUtilitiesCalculateColumnTotalArrayTest
+
+This class focuses on the test cases for the overwritten DataUtilities class method `calculateColumnTotal` with the array argument.
+|_Method_|_Function_|
+|---|---|
+| testCCTAValid | all arguments are valid |
+| testCCTAOutOfBoundsColumn | column argument is out of bounds |
+| testCCTABoundaryColumn | column argument on boundary |
+| testCCTAExtraValidRows | `validRows` contains rows outside of column values|
+| testCCTANullData | `data` is null|
+| testCCTANegativeValidValues|all arguments are valid but contain negatives|
+| testCCTAEmptyValidRows |`validRows` contains nothing (`{}`)|
+
 ### TestDataUtilitiesCumulativePercentages
 
 This test class focused on the test cases for `getCumulativePercentages(KeyedValues)` defined above
 
-| _Method_                     			| _Function_                           				|
-| --------------------------------------------- | ------------------------------------------------------------- |
-| **testSequentialList**       			| data is a correct sequential list    				|
-| **testSequentialListWithNegativeValues** 	| data is a correct sequential list with negative values       	|
-| **testNonSequentialList** 			| data is a correct non sequential list        			|
-| **testNullArgPassed** 			| data is null        						|
-| **testDataThrowsUnexpectedException** 	| data is a list with unexpected behaviour 			|
-
+| _Method_                                 | _Function_                                             |
+| ---------------------------------------- | ------------------------------------------------------ |
+| **testSequentialList**                   | data is a correct sequential list                      |
+| **testSequentialListWithNegativeValues** | data is a correct sequential list with negative values |
+| **testNonSequentialList**                | data is a correct non sequential list                  |
+| **testNullArgPassed**                    | data is null                                           |
+| **testDataThrowsUnexpectedException**    | data is a list with unexpected behaviour               |
 
 ## Range
+
 ### RangeConstrainTest
 
 This class focused on the test cases for the Range class method `constrain`. As determined by the section above, the methods below test combinations of each partition. For the test cases a fixed range of **(-2, 12)** was used.
@@ -188,50 +201,46 @@ For `testRangesNoOverlap` the documentation was unclear whether the method shoul
 | **testRangesNullRange2**        | Combining ranges with `range2` being `null`                                             |
 | **testRangesNullBoth**          | Combining 2 `null` ranges                                                               |
 
-
 ### RangeTestIntersectsDouble
 
 This class focused on test cases for the `intersects(double, double)` method as described above
 
-| _Method_                        		| _Function_         			|
-| ----------------------------------------------| --------------------------------------|
-| **testB1GreaterThanEqualsB0Within Range**	| upper>b1>=b0>lower 			|
-| **testB1GreaterThanUpper**  			| b1>upper>b0>lower  			|
-| **testB0LessThanLower**	   		| upper>b1>lower>b0  			|	
-| **testArgRangeLargerThanCurrentRange**	| b1>upper>=lower>b0 			|
-| **testB1EqualsUpperAndB0EqualsLower**		| b1=upper>lower=b0  			|
-| **testB1EqualsUpperB0GreaterThanLower**	| b1=upper>b0>lower  			|
-| **testUpperGreaterThanB1AndB0EqualsLower**	| upper>b1>lower=b0  			|
-| **testArgRangeDoesNotIntersectFromRight**	| b1>=b0>upper>lower 			|
-| **testArgRangeDoesNotIntersectFromLeft**	| upper>lower>b1>=b0 			|
-| **testAllEqualEachOther**			| b1=upper=lower=b0  			|
-| **testB0GreaterThanB1**			| b0>b1		     			|
-| **testB1NaN**					| b1 is Double.NaN, b0 valid		|
-| **testB0NaN**					| b0 is Double.NaN, b1 valid		|
-| **testBothNaN**				| b1 and b0 are Double.NaN		|	
-| **testBothNegativeInf**			| b1 and b0 are -Infinity		|
-| **testBothPositiveInf**			| b1 and b0 are +Infinity		|
-| **testMaxArgRange**				| b1 is +Infinity, b0 is -Infinity	|
-
-
+| _Method_                                   | _Function_                       |
+| ------------------------------------------ | -------------------------------- |
+| **testB1GreaterThanEqualsB0Within Range**  | upper>b1>=b0>lower               |
+| **testB1GreaterThanUpper**                 | b1>upper>b0>lower                |
+| **testB0LessThanLower**                    | upper>b1>lower>b0                |
+| **testArgRangeLargerThanCurrentRange**     | b1>upper>=lower>b0               |
+| **testB1EqualsUpperAndB0EqualsLower**      | b1=upper>lower=b0                |
+| **testB1EqualsUpperB0GreaterThanLower**    | b1=upper>b0>lower                |
+| **testUpperGreaterThanB1AndB0EqualsLower** | upper>b1>lower=b0                |
+| **testArgRangeDoesNotIntersectFromRight**  | b1>=b0>upper>lower               |
+| **testArgRangeDoesNotIntersectFromLeft**   | upper>lower>b1>=b0               |
+| **testAllEqualEachOther**                  | b1=upper=lower=b0                |
+| **testB0GreaterThanB1**                    | b0>b1                            |
+| **testB1NaN**                              | b1 is Double.NaN, b0 valid       |
+| **testB0NaN**                              | b0 is Double.NaN, b1 valid       |
+| **testBothNaN**                            | b1 and b0 are Double.NaN         |
+| **testBothNegativeInf**                    | b1 and b0 are -Infinity          |
+| **testBothPositiveInf**                    | b1 and b0 are +Infinity          |
+| **testMaxArgRange**                        | b1 is +Infinity, b0 is -Infinity |
 
 ### RangeGetLengthTest
 
-The following test cases were developed to throroughly test the getLength() method of Range. For most tests, an upper and a 
+The following test cases were developed to throroughly test the getLength() method of Range. For most tests, an upper and a
 lower boundary were assigned an arbitrary value that fit the prescribed test conditions, and then was checked against an assumed
 infallible subtracted number for its accuracy.
 
-| _Method_                        | _Function_                                                                              |
-| ------------------------------- | --------------------------------------------------------------------------------------- |
-| **testBothBoundariesZero**      | Length when both upper and lower bounds zero for Range                                  |
-| **testLowerBoundaryLessThanUpper**| Length when lower boundary < upper boundary                                             |
-| **testLowerBoundaryEqualsUpperBoundary** | Length when lower bound == upper bound                                           |
-| **testLowerBoundaryGreaterThanUpper** | Length when lower bound > upper bound                                             |
-| **testNull**                    | Length for a NULL Range                                                                 |
-| **testBothNegative**            | Length when both boundaries are negative values                                          |
-| **testOneNegativeBound**        | Length when one boundary is  negative value                                               |
-| **testLargePositive**           | Length when a boundary == Double.MAX_VAUE                                                 |
-
+| _Method_                                 | _Function_                                             |
+| ---------------------------------------- | ------------------------------------------------------ |
+| **testBothBoundariesZero**               | Length when both upper and lower bounds zero for Range |
+| **testLowerBoundaryLessThanUpper**       | Length when lower boundary < upper boundary            |
+| **testLowerBoundaryEqualsUpperBoundary** | Length when lower bound == upper bound                 |
+| **testLowerBoundaryGreaterThanUpper**    | Length when lower bound > upper bound                  |
+| **testNull**                             | Length for a NULL Range                                |
+| **testBothNegative**                     | Length when both boundaries are negative values        |
+| **testOneNegativeBound**                 | Length when one boundary is negative value             |
+| **testLargePositive**                    | Length when a boundary == Double.MAX_VAUE              |
 
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
@@ -245,7 +254,7 @@ Similarly, the report was divided so that each section was completed by the stud
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-One difficulty the team came across was trying to all share a project in eclipse and have it function properly. We worked together to figure out how to share our individual processes until we all got eclipse to work. Another issue encountered during the process was that the included jar files specifically hamcrest-core-1-3.jar did not have the required classes to allow for Jmock to be used, to remedy this, hamcrest-all-1-3.jar had to be found on the internet and added to the classpath.  
+One difficulty the team came across was trying to all share a project in eclipse and have it function properly. We worked together to figure out how to share our individual processes until we all got eclipse to work. Another issue encountered during the process was that the included jar files specifically hamcrest-core-1-3.jar did not have the required classes to allow for Jmock to be used, to remedy this, hamcrest-all-1-3.jar had to be found on the internet and added to the classpath.
 
 # 6 Comments/feedback on the lab itself
 
