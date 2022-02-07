@@ -153,6 +153,8 @@ The equivalence classes and boundary classes of the lower boundary value were as
 - zero
 - Double.MAX_VALUE-1
 - Double.MIN_VALUE
+- upper bound is less than lower boundary
+- null Range
 
 If all equivalence and boundaries are tested and passed, then getLowerBound() has been extensively tested.
 
@@ -285,6 +287,9 @@ the tested cases below, and fit the requirments of the test cases.
 | **testNegativeNumber** | lower boundary is negative value |
 | **testZero** | lower boundary is zero |
 | **testBigValue** | lower boundary is max value -1 |
+| **testSmallValue** | lower boundary is min value |
+| **flipFlop** | lower boundary is greater than upper boundary |
+| **nullRange** | Range is null |
 
 
 // write down the name of the test methods and classes. Organize the based on
