@@ -46,6 +46,21 @@ To test cases for this method were devised based on manipulating KeyedValues usi
 - List with unexpected behaviour
 - Null argument
 
+### `DataUtilitiesCalcRowTotalTest`
+
+>Returns the total of the values in one row of the supplied data table.
+
+Testing the CalculateRowTotal method of Data Utilities requires the examination of a few boundary cases and equivalence classes.
+Doing so should test the valid and invalid functionalities of this method, which will employ mocking the values2D parameter using 
+JMock notation.
+The equivalence classes and boundaries to be partitioned and tested are:
+
+- Calculation of a valid row with valid parameters (within boundary)
+- Calculation of valid row equal to a boundary
+- Row out of bounds above boundary
+- Negative row calculation
+- Valid row with negative numbers
+- Testing NULL functionality
 ## Range
 
 ### `constrain(double value)`
