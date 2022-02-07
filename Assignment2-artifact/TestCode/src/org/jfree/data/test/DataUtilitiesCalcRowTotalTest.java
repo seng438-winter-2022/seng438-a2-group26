@@ -153,4 +153,41 @@ public class DataUtilitiesCalcRowTotalTest extends DataUtilities {
 		double checkRes = (-1.667-2.5-15.5982315);
 		assertEquals(checkRes, calcResult, DELTA);
 	}
+
+	
+	/**
+	 * Test for a table of no entries (No rows, no columns).
+	 * Expects/passes if 0.0 is the sum, thus no summation occurs
+	 */
+	@Test(/*expected = NullPointerException.class*/)
+	public void calcRowNoValues() {
+		values2DMock.checking(new Expectations() {
+			{
+				one(val).getColumnCount();
+				will(returnValue(0));
+				one(val).getRowCount();
+				will(returnValue(0));
+				one(val).getValue(0, 0);
+				//will(returnValue(null));
+				will(throwException(new NullPointerException("Null entries")));
+				
+			}
+		});
+		calcResult = DataUtilities.calculateRowTotal(val, 0);
+		assertEquals(0.0, calcResult, DELTA);
+	}
+	
+	/**
+	 * Test Case: Illegal NULL argument to calculateRowTotal
+	 * expects an exception to be thrown
+	 * No need to mock a values2D object since we're passing null into the values2D parameter
+	 */
+	@Test(expected = Exception.class)
+	public void calcRowNullTest() {
+		calcResult = DataUtilities.calculateRowTotal(null, 2);
+	}
+
+
+
+
 }
