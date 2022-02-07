@@ -82,6 +82,9 @@ public class DataUtilitiesCalcRowTotalTest extends DataUtilities {
 		calcResult = DataUtilities.calculateRowTotal(val, 1);
 	}
 
+	/**
+	 * Test that calculating on a negative row index returns a index out of bounds exception
+	 */
 	@Test(expected = IndexOutOfBoundsException.class)
 	public void calculateRowTotalNegativeRows() {
 		values2DMock.checking(new Expectations() {
@@ -99,4 +102,55 @@ public class DataUtilitiesCalcRowTotalTest extends DataUtilities {
 		calcResult = DataUtilities.calculateRowTotal(val, -1);
 	}
 	
+	/**
+	 * Calculate row total on a boundary value
+	 * In this case, total rows = 1, and we'll call calculate on the 0th indexed row(boundary)
+	 */
+	@Test
+	public void calculateRowTotalOnBoundary() {
+		values2DMock.checking(new Expectations() {
+			{
+				one(val).getColumnCount();
+				will(returnValue(2));
+				one(val).getRowCount();
+				will(returnValue(1));
+				one(val).getValue(0,0);
+				will(returnValue(2.5));
+				one(val).getValue(0, 1);
+				will(returnValue(5.0));
+			}
+		});
+		calcResult = DataUtilities.calculateRowTotal(val, 0);
+		assertEquals(calcResult, 7.5, DELTA);
+	}
+	
+	/**
+	 * Test for a row with entirely negative values to be added properly.
+	 */
+	@Test
+	public void calcRowTotalWithNegatives() {
+		values2DMock.checking(new Expectations() {
+			{
+				one(val).getColumnCount();
+				will(returnValue(3));
+				one(val).getRowCount();
+				will(returnValue(2));
+				one(val).getValue(0, 0);
+				will(returnValue(-2.5));
+				one(val).getValue(0, 1);
+				will(returnValue(-5.75));
+				one(val).getValue(0, 2);
+				will(returnValue(-21.3455));
+				one(val).getValue(1, 0);
+				will(returnValue(-1.667));
+				one(val).getValue(1, 1);
+				will(returnValue(-2.50));
+				one(val).getValue(1, 2);
+				will(returnValue(-15.5982315));
+			}
+		});
+		calcResult = DataUtilities.calculateRowTotal(val, 1);
+		double checkRes = (-1.667-2.5-15.5982315);
+		assertEquals(checkRes, calcResult, DELTA);
+	}
 }
