@@ -60,6 +60,7 @@ The equivalence classes and boundaries to be partitioned and tested are:
 - Row out of bounds above boundary
 - Negative row calculation
 - Valid row with negative numbers
+- Row with no values
 - Testing NULL functionality
 
 ## Range
