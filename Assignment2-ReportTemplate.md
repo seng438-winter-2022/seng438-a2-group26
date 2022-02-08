@@ -53,7 +53,7 @@ To test cases for this method were devised based on manipulating KeyedValues usi
 - List with unexpected behaviour
 - Null argument
 
-### `DataUtilitiesCalcRowTotalTest`
+### `CalculateRowTotal(Values2D data, int row)`
 
 >Returns the total of the values in one row of the supplied data table.
 
@@ -70,7 +70,7 @@ The equivalence classes and boundaries to be partitioned and tested are:
 - Row with no values
 - Testing NULL functionality
 
-### `testColumnTotal`
+### `calculateColumnTotal(Values2D data, int row)`
 
 >Returns the total of the values in one column of the supplied data table.
 
@@ -83,6 +83,21 @@ boundary classes using mocking of Values2D to ensure the functionality of the me
 - negative column
 - row with no values
 - NULL row
+
+### `calculateRowTotal(Values2D data, int row, int[] validRows)`
+> Returns the total of the values in one row of the supplied data table by taking only the column numbers in the array into account.
+
+Testing this method requires the testing of boundary cases, invalid cases and valid cases within the domain of the calculateRowTotal method(). Specifically, the third paramter - 
+int[]validRows - is of particular interest in the determination and examination of such cases and how the method functions. As such, the test cases are as follows:
+
+- Testing a valid row within validRows
+- Testing a valid row on the boundary of validRows
+- Testing a row > validRows
+- Testing a row < validRows
+- Testing a negative row (should fail regardless of validRows)
+- Testing an empty validRows
+- Testing a negative validRows
+- Testing a NULL DataUtilities
 
 ## Range
 
