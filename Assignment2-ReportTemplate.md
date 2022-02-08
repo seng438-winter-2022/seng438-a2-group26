@@ -45,7 +45,7 @@ Likely, these tests will include:
 
 > Returns a KeyedValues object with corresponding indexes to data but with cumulative percentages
 
-To test cases for this method were devised based on manipulating KeyedValues using mocery into the following types:
+To test cases for this method were devised based on manipulating KeyedValues using mockery into the following types:
 
 - Correct sequential List
 - Correct Non-sequential List
@@ -69,6 +69,20 @@ The equivalence classes and boundaries to be partitioned and tested are:
 - Valid row with negative numbers
 - Row with no values
 - Testing NULL functionality
+
+### `testColumnTotal`
+
+>Returns the total of the values in one column of the supplied data table.
+
+Testing the CalculateColumnTotal method of Data Utilities was done by taking in account equivalence classes, as well as
+boundary classes using mocking of Values2D to ensure the functionality of the method. The tests are as followed:
+
+- testing with valid parameters
+- testing with valid column at the boundary of the table
+- testing column outside of boundary of table
+- negative column
+- row with no values
+- NULL row
 
 ## Range
 
