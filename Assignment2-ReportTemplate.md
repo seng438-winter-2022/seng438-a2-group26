@@ -97,6 +97,7 @@ int[]validCols - is of particular interest in the determination and examination 
 - Testing an empty validCols
 - Testing a negative validCols
 - Testing a NULL DataUtilities
+- Test with a null validcols
 
 ## Range
 
@@ -166,8 +167,6 @@ As such, the following equivalency classes classes and boundary cases were creat
 - {lower range boundary > upper range boundary}
 - {range is NULL}
 - {a range boundary contains a very large number}
-- {a range boundary contains a 'very large negative' number}
-- {a rounge boundary contains an overflow ie. >MAX_SIZE(double)}
 - {both boundaries are negative}
 - {one boundary is negative}
 - {both boundaries are zero}
@@ -248,6 +247,18 @@ Tests calculateColumnTotal() method from DataUtilities, and mocks the Values2D.
 | **testNegative** | tests negative column |
 | **testEmpty** | tests an empty column |
 | **nullColTest** | tests NULL table |
+
+### rowTotalWithArray
+
+Tests calculateRowTotal(Values2D, row, validCols) while mocking the Values2D values.
+
+| _Method_ | _Function_ |
+| ---- | ---- |
+| **allValid** | Valid validCols and valid entries and row |
+| **onBound** | Test row on validCols boundary |
+| **greaterValidCols** | When validCols exceeds actual columns |
+| **negativeRowCalc** | Calculate row total on negative row |
+
 
 ## Range
 
