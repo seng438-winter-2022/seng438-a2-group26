@@ -113,6 +113,8 @@ To test this funciton we will need to examine a variety of values that may or ma
 
 ### `combine(Range range1, Range range2)`
 
+> Returns a new range that is the combination of the two input ranges
+
 To test this function, we will be dividing our test cases into the following paritions:
 
 - Ranges do not have any overlap
@@ -128,6 +130,9 @@ To test this function, we will be dividing our test cases into the following par
 These partitions allow us to verify the boundaries of each range while omitting equivalent cases where the ranges change place.
 
 ### `intersects(double b0, double b1)`
+
+
+> returns true if the given range intersects the current range, false otherwise
 
 To test this function, the following test cases were devised based on mathematics and the understanding that the variables are dependent on each other:
 where upper is the calling object's upper bound, and lower is its lower bound, b0 is the argument lower bound and b1 is the argument upper bound
