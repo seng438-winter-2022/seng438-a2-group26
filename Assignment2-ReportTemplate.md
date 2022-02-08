@@ -9,9 +9,16 @@
 | Jared Lundy      | 30086687 | jared840       |
 | Jordan Lundy     | 30086686 | jordan427-prog |
 
+1. [Introduction](#1-introduction)
+2. [Detailed Description of unit test strategy](#2-detailed-description-of-unit-test-strategy)
+3. [Test cases developed](#3-test-cases-developed)
+4. [How the team work/effor was divided and managed](#4-how-the-team-workeffort-was-divided-and-managed)
+5. [Difficulties encountered, challenges overcome, and lessons learned](#5-difficulties-encountered-challenges-overcome-and-lessons-learned)
+6. [Comments/feedback on the lab itself](#6-commentsfeedback-on-the-lab-itself)
+
 # 1 Introduction
 
-This lab focuses on the fundamentals of automated unit testing. Using JUnit test framework, we are developing automated tests for the JFreeChart. Specific tests will be looking at `org.jfree.data` classes `DataUtilities` and `Range`.
+This lab focuses on the fundamentals of automated unit testing. Using JUnit4 test framework, we are developing automated tests for the JFreeChart. Specific tests will be looking at `org.jfree.data` classes `DataUtilities` and `Range`.
 
 # 2 Detailed description of unit test strategy
 
@@ -304,7 +311,9 @@ Similarly, the report was divided so that each section was completed by the stud
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-One difficulty the team came across was trying to all share a project in eclipse and have it function properly. We worked together to figure out how to share our individual processes until we all got eclipse to work. Another issue encountered during the process was that the included jar files specifically hamcrest-core-1-3.jar did not have the required classes to allow for Jmock to be used, to remedy this, hamcrest-all-1-3.jar had to be found on the internet and added to the classpath.
+One difficulty the team came across was trying to all share a project in eclipse and have it function properly. We worked around this issue by pair programming the actual running of the tests.
+
+Another issue encountered during the process was that the included jar files specifically hamcrest-core-1-3.jar did not have the required classes to allow for Jmock to be used, to remedy this, hamcrest-all-1-3.jar had to be found on the internet and added to the classpath.
 
 # 6 Comments/feedback on the lab itself
 
