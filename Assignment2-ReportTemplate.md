@@ -84,19 +84,19 @@ boundary classes using mocking of Values2D to ensure the functionality of the me
 - row with no values
 - NULL row
 
-### `calculateRowTotal(Values2D data, int row, int[] validRows)`
+### `calculateRowTotal(Values2D data, int row, int[] validCols)`
 > Returns the total of the values in one row of the supplied data table by taking only the column numbers in the array into account.
 
 Testing this method requires the testing of boundary cases, invalid cases and valid cases within the domain of the calculateRowTotal method(). Specifically, the third paramter - 
-int[]validRows - is of particular interest in the determination and examination of such cases and how the method functions. As such, the test cases are as follows:
+int[]validCols - is of particular interest in the determination and examination of such cases and how the method functions. As such, the test cases are as follows:
 
-- Testing a valid row within validRows
-- Testing a valid row on the boundary of validRows
-- Testing a row > validRows
-- Testing a row < validRows
-- Testing a negative row (should fail regardless of validRows)
-- Testing an empty validRows
-- Testing a negative validRows
+- Testing a valid row within validCols
+- Testing a valid row on the boundary of validCols
+- Testing a row > validCols
+- Testing a row < validCols
+- Testing a negative row (should fail regardless of validCols)
+- Testing an empty validCols
+- Testing a negative validCols
 - Testing a NULL DataUtilities
 
 ## Range
