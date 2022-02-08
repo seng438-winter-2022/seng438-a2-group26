@@ -21,9 +21,6 @@
 This lab focuses on the fundamentals of automated unit testing. Using JUnit4 test framework, we are developing automated tests for the JFreeChart. Specific tests will be looking at `org.jfree.data` classes `DataUtilities` and `Range`.
 
 # 2 Detailed description of unit test strategy
-
-// including the input partitions you have designed
-
 ## DataUtilities
 
 ### `calculateColumnTotal(Values2D date, int column, int[] validRows)`
@@ -352,11 +349,6 @@ the tested cases below, and fit the requirments of the test cases.
 | **testSmallValue** | lower boundary is min value |
 | **flipFlop** | lower boundary is greater than upper boundary |
 | **nullRange** | Range is null |
-
-
-// write down the name of the test methods and classes. Organize the based on
-the source code method // they test. identify which tests cover which partitions
-you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
