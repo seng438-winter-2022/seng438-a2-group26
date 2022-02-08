@@ -18,7 +18,7 @@
 
 # 1 Introduction
 
-This lab focuses on the fundamentals of automated unit testing. Using JUnit4 test framework, we are developing automated tests for the JFreeChart. Specific tests will be looking at `org.jfree.data` classes `DataUtilities` and `Range`.
+This lab focuses on the fundamentals of automated unit testing. Using JUnit4 test framework, we are developing automated tests for the JFreeChart. Specific tests will be looking at `org.jfree.data` classes `DataUtilities` and `Range`. Certain methods in `DataUtilities` requires the use of JMock to create mocks of passed in interfaces.
 
 # 2 Detailed description of unit test strategy
 ## DataUtilities
@@ -366,6 +366,8 @@ Similarly, the report was divided so that each section was completed by the stud
 One difficulty the team came across was trying to all share a project in eclipse and have it function properly. We worked around this issue by pair programming the actual running of the tests.
 
 Another issue encountered during the process was that the included jar files specifically hamcrest-core-1-3.jar did not have the required classes to allow for Jmock to be used, to remedy this, hamcrest-all-1-3.jar had to be found on the internet and added to the classpath.
+
+Additionally, learning how to mock with JMock was somewhat of a challenge. Part of the process to understand JMock was gaining an understanding of what the SUT called from the mock but this was tricky to grasp at first. The use of mocks was an overall beneficial learing experience despite some the initial difficulty 
 
 # 6 Comments/feedback on the lab itself
 
