@@ -222,6 +222,19 @@ Test class designed to test the calculateRowTotal() method of DataUtilities, whi
 | **calcRowNoValues**                       | Row with no values                                     |
 | **calcRowNullTest**                       | Null functionality                                     |
 
+### testColumnTotal
+
+Tests calculateColumnTotal() method from DataUtilities, and mocks the Values2D.
+
+| _Method_ | _Function_ |
+| -------- | ---------- |
+| **testValidParameters** | tests valid column with valid value |
+| **testBoundary** | tests boundary column |
+| **testOutsideBoundary** | tests column outside of boundary |
+| **testNegative** | tests negative column |
+| **testEmpty** | tests an empty column |
+| **nullColTest** | tests NULL table |
+
 ## Range
 
 ### RangeConstrainTest
