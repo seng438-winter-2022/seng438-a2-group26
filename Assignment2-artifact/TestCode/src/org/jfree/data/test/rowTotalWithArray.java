@@ -118,5 +118,135 @@ public class rowTotalWithArray extends DataUtilities {
 	}
 	
 	
+/**
+	 * CalcRow called on a negative row number. Should give an exception as its invalid.
+	 */
+	@Test(expected = Exception.class)
+	public void negativeRowCalc() {
+		mock.checking(new Expectations() {
+			{
+				
+				one(vals).getColumnCount();
+				will(returnValue(1));
+				one(vals).getRowCount();
+				will(returnValue(1));
+				one(vals).getValue(0,0);
+				will(returnValue(2.5));
+				
+				one(vals).getValue(-1, 0);
+				will(throwException(new Exception("Illegal negative rows")));
+				
+			}
+		});
+		int[] valids = {0};
+		double results = DataUtilities.calculateRowTotal(vals, -1, valids);
+	}
+	
+	
+	/**
+	 * Test row calc with empty valid cols. Thus, nothing should be valid and zero should be sum
+	 */
+	@Test 
+	public void emptyValidCols() {
+		mock.checking(new Expectations() {
+			{
+				
+				one(vals).getColumnCount();
+				will(returnValue(2));
+				one(vals).getRowCount();
+				will(returnValue(2));
+				one(vals).getValue(0,0);
+				will(returnValue(2.5));
+				one(vals).getValue(0, 1);
+				will(returnValue(3.5));
+				one(vals).getValue(1,0);
+				will(returnValue(4.5));
+				one(vals).getValue(1, 1);
+				will(returnValue(5.5));
+			}
+		});
+		int[] valids = {};
+		double result = DataUtilities.calculateRowTotal(vals, 1, valids);
+		assertEquals(0, result, 0);
+	}
+	
+	/**
+	 * Test row on validCols with negative values. Since negative columns do not exist, should
+	 * pass only if exception thrown
+	 */
+	@Test(expected = Exception.class)
+	public void negativeValidCols() {
+		mock.checking(new Expectations() {
+			{
+				
+				one(vals).getColumnCount();
+				will(returnValue(2));
+				one(vals).getRowCount();
+				will(returnValue(2));
+				one(vals).getValue(0,0);
+				will(returnValue(2));
+				one(vals).getValue(0, 1);
+				will(returnValue(5.25));
+				one(vals).getValue(1,0);
+				will(returnValue(7.5));
+				one(vals).getValue(1, 1);
+				will(returnValue(8.25));
+				
+				one(vals).getValue(1, -1);
+				will(throwException(new Exception("Illegal negative cols")));
+			}
+		});
+		int[] valids = {-1};
+		double result = DataUtilities.calculateRowTotal(vals, 1, valids);
+		
+	}
+	
+	/**
+	 * Test with validCols and a NULL Datautilities. Expects an exception to pass!
+	 */
+	@Test(expected = Exception.class)
+	public void nullTest() {
+		int[] valids = {2,5,6};
+		double result = DataUtilities.calculateRowTotal(null, 1, valids);
+	}
+	
+	
+	
+	/**
+	 * Test row with validCols==null. Pass if exception is thrown
+	 */
+	@Test(expected = Exception.class)
+	public void nullValidCols() {
+		mock.checking(new Expectations() {
+			{
+				
+				one(vals).getColumnCount();
+				will(returnValue(2));
+				one(vals).getRowCount();
+				will(returnValue(2));
+				one(vals).getValue(0,0);
+				will(returnValue(2));
+				one(vals).getValue(0, 1);
+				will(returnValue(5.25));
+				one(vals).getValue(1,0);
+				will(returnValue(7.5));
+				one(vals).getValue(1, 1);
+				will(returnValue(8.25));
+				
+				one(vals).getValue(1, -1);
+				will(throwException(new Exception("Illegal negative cols")));
+			}
+		});
+		int[] valids = null;
+		double result = DataUtilities.calculateRowTotal(vals, 1, valids);
+		
+	}
+
+
+
+
+
+
+
 
 }
