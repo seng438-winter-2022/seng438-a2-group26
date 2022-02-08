@@ -92,8 +92,7 @@ int[]validCols - is of particular interest in the determination and examination 
 
 - Testing a valid row within validCols
 - Testing a valid row on the boundary of validCols
-- Testing a row > validCols
-- Testing a row < validCols
+- Testing a row with validCols exceeding actual columns
 - Testing a negative row (should fail regardless of validCols)
 - Testing an empty validCols
 - Testing a negative validCols
