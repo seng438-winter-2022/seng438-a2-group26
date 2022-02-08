@@ -258,7 +258,10 @@ Tests calculateRowTotal(Values2D, row, validCols) while mocking the Values2D val
 | **onBound** | Test row on validCols boundary |
 | **greaterValidCols** | When validCols exceeds actual columns |
 | **negativeRowCalc** | Calculate row total on negative row |
-
+| **emptyValidCols** | Calculate row total with empty validCols |
+| **negativeValidCols** | validCols[] contains negative value(s) |
+| **nullTest** | null dataUtilities |
+| **nullValidCols** | validCols is null |
 
 ## Range
 
