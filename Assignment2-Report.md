@@ -196,6 +196,8 @@ If all equivalence and boundaries are tested and passed, then getLowerBound() ha
 
 # 3 Test cases developed
 
+Source code can be found in seng438-a2-group26/Assignment2-artifact/TestCode/src/org/jfree/data/test/
+
 ## DataUtilities
 
 ### DataUtilitiesCalculateColumnTotalArrayTest
