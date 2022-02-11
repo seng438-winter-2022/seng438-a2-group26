@@ -225,6 +225,8 @@ This test class focused on the test cases for `getCumulativePercentages(KeyedVal
 | **testNullArgPassed**                    | data is null                                           |
 | **testDataThrowsUnexpectedException**    | data is a list with unexpected behaviour               |
 
+`testSequentialListWithNegativeValues` failed as it returned a value greater than 1.0 which the documentation for the function said is not supposed to happen
+
 ### DataUtilitiesCalcRowTotalTest
 
 Test class designed to test the calculateRowTotal() method of DataUtilities, while using JMock to mock the Values2D parameter.
