@@ -367,7 +367,7 @@ Similarly, the report was divided so that each section was completed by the stud
 
 One difficulty the team came across was trying to all share a project in eclipse and have it function properly. We worked around this issue by pair programming the actual running of the tests.
 
-Another issue encountered during the process was that the included jar files specifically hamcrest-core-1-3.jar did not have the required classes to allow for Jmock to be used, to remedy this, hamcrest-all-1-3.jar had to be found on the internet and added to the classpath.
+Another issue encountered during the process was that the included jar files specifically hamcrest-core-1-3.jar did not have the required classes to allow for Jmock to be used, to remedy this, hamcrest-all-1-3.jar had to be found on the internet and added to the classpath (this file is included in 'seng438-a2-group26/Assignment2-artifact/Assignment2-artifact/jfreechart-1.0.19/jfreechart-1.0.19/lib/' you will need to change eclipse your classpath to run). 
 
 Additionally, learning how to mock with JMock was somewhat of a challenge. Part of the process to understand JMock was gaining an understanding of what the SUT called from the mock but this was tricky to grasp at first. The use of mocks was an overall beneficial learing experience despite some the initial difficulty 
 
